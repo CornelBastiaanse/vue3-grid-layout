@@ -389,8 +389,8 @@ function dragEvent(
 ) {
   //console.log(eventName + " id=" + id + ", x=" + x + ", y=" + y);
   let l = <LayoutItem>getLayoutItem(props.layout, id)
-  l.x = x as number;
-  l.y = y as number;
+  if(l.x) l.x = x as number;
+  if(l.y) l.y = y as number;
 
   //GetLayoutItem sometimes returns null object
   if (l === undefined || l === null) {
