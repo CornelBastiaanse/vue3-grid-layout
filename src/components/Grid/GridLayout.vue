@@ -391,6 +391,7 @@ function dragEvent(
   let l = <LayoutItem>getLayoutItem(props.layout, id)
   l.x = x as number;
   l.y = y as number;
+  console.log("Yeah buddy!!");
 
   //GetLayoutItem sometimes returns null object
   if (l === undefined || l === null) {
