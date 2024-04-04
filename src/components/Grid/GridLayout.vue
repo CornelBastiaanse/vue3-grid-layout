@@ -388,7 +388,9 @@ function dragEvent(
   w?: number
 ) {
   //console.log(eventName + " id=" + id + ", x=" + x + ", y=" + y);
-  let l = getLayoutItem(props.layout, id)
+  let l = <LayoutItem>getLayoutItem(props.layout, id)
+  l.x = x as number;
+  l.y = y as number;
 
   //GetLayoutItem sometimes returns null object
   if (l === undefined || l === null) {
@@ -407,8 +409,8 @@ function dragEvent(
 
   if (eventName === "dragmove" || eventName === "dragstart") {
     placeholder.value.i = id as string | number
-    placeholder.value.x = l.x as number
-    placeholder.value.y = l.y as number
+    placeholder.value.x = x as number // l.x as number
+    placeholder.value.y = y as number // l.y as number
     placeholder.value.w = w as number
     placeholder.value.h = h as number
     nextTick(function () {
