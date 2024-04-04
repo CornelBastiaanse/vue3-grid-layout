@@ -4769,7 +4769,7 @@ const na = {
     }
     function x(y, M, R, N, U, J) {
       let _ = hn(n.layout, M);
-      _.x && (_.x = R), _.y && (_.y = N), _ == null && (_ = { x: 0, y: 0 }), y === "dragstart" && !n.verticalCompact && (m.value = n.layout.reduce(
+      _ == null ? _ = { x: 0, y: 0 } : (_.x = R, _.y = N), y === "dragstart" && !n.verticalCompact && (m.value = n.layout.reduce(
         (it, { i: Q, x: at, y: Y }) => ({
           ...it,
           [Q]: { x: at, y: Y }
