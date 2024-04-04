@@ -318,7 +318,7 @@ watch(
     if (!newMargin || (newMargin[0] == margin.value[0] && newMargin[1] == margin.value[1])) {
       return
     }
-    margin.value = newMargin.map(m => Number(m))
+    margin.value = (<Array<any>>newMargin).map(m => Number(m))
     createStyle()
     emitContainerResized()
   }
@@ -826,6 +826,7 @@ function selfCompact(layout?: Layout) {
 
 function tryMakeDraggable() {
   if (interactObj.value === null || interactObj.value === undefined) {
+    // @ts-ignore
     interactObj.value = interact(this$refsItem.value)
     if (!useStyleCursor.value) {
       // @ts-ignore
@@ -843,7 +844,7 @@ function tryMakeDraggable() {
     /*this.interactObj.draggable({allowFrom: '.vue-draggable-handle'});*/
     if (!dragEventSet.value) {
       dragEventSet.value = true
-      interactObj.value.on("dragstart dragmove dragend", function (event) {
+      interactObj.value?.on("dragstart dragmove dragend", function (event) {
         handleDrag(event)
       })
     }
@@ -856,6 +857,7 @@ function tryMakeDraggable() {
 }
 function tryMakeResizable() {
   if (interactObj.value === null || interactObj.value === undefined) {
+    // @ts-ignore
     interactObj.value = interact(this$refsItem.value)
     if (!useStyleCursor.value) {
       // @ts-ignore
@@ -905,7 +907,7 @@ function tryMakeResizable() {
     interactObj.value.resizable(opts)
     if (!resizeEventSet.value) {
       resizeEventSet.value = true
-      interactObj.value.on("resizestart resizemove resizeend", function (event) {
+      interactObj.value?.on("resizestart resizemove resizeend", function (event) {
         handleResize(event)
       })
     }

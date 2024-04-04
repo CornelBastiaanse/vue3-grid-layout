@@ -1,3 +1,6 @@
+import { Layout } from '../../../../../../../../C:/Users/cornel/Work/Repos/vue3-grid-layout/src/helpers/utils';
+import { default as elementResizeDetectorMaker } from 'element-resize-detector';
+import { EventType } from 'mitt';
 export interface Placeholder {
     x: number;
     y: number;
@@ -60,117 +63,39 @@ export interface LayoutData {
     };
     this$refsLayout: HTMLElement;
 }
-import { EventType } from "mitt";
-import elementResizeDetectorMaker from "element-resize-detector";
-import { Layout } from '../../helpers/utils';
-declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
-    isDraggable: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
+declare const _default: __VLS_WithTemplateSlots<import('vue').DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<Props>, {
+    autoSize: boolean;
+    colNum: number;
+    rowHeight: number;
+    maxRows: number;
+    margin: () => number[];
+    isDraggable: boolean;
+    isResizable: boolean;
+    isMirrored: boolean;
+    isBounded: boolean;
+    useCssTransforms: boolean;
+    verticalCompact: boolean;
+    restoreOnDrag: boolean;
+    responsive: boolean;
+    responsiveLayouts: () => {};
+    transformScale: number;
+    breakpoints: () => {
+        lg: number;
+        md: number;
+        sm: number;
+        xs: number;
+        xxs: number;
     };
-    isResizable: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
+    cols: () => {
+        lg: number;
+        md: number;
+        sm: number;
+        xs: number;
+        xxs: number;
     };
-    isBounded: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    autoSize: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    margin: {
-        type: import("vue").PropType<number[]>;
-        default: () => number[];
-    };
-    responsive: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    cols: {
-        type: import("vue").PropType<{
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        }>;
-        default: () => {
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        };
-    };
-    colNum: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    rowHeight: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    maxRows: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    transformScale: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    useCssTransforms: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    isMirrored: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    verticalCompact: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    restoreOnDrag: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    layout: {
-        type: import("vue").PropType<Layout>;
-        required: true;
-    };
-    responsiveLayouts: {
-        type: import("vue").PropType<{
-            [key: string]: any;
-        }>;
-        default: () => {};
-    };
-    breakpoints: {
-        type: import("vue").PropType<{
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        }>;
-        default: () => {
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        };
-    };
-    preventCollision: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    useStyleCursor: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-}, {
+    preventCollision: boolean;
+    useStyleCursor: boolean;
+}>, {
     width: import("vue").Ref<number | null>;
     mergeStyle: import("vue").Ref<{
         [key: string]: string;
@@ -211,7 +136,6 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     } | null>;
     defaultGridItem: import("vue").Ref<any>;
     dragEvent: (eventName?: EventType, id?: string | number, x?: number, y?: number, h?: number, w?: number) => void;
-    layout: Layout;
     autoSize: boolean;
     colNum: number;
     rowHeight: number;
@@ -224,6 +148,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     useCssTransforms: boolean;
     verticalCompact: boolean;
     restoreOnDrag: boolean;
+    layout: Layout;
     responsive: boolean;
     responsiveLayouts: {
         [key: string]: any;
@@ -253,114 +178,39 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     "layout-ready": (layout: Layout) => void;
     "update:layout": (layout: Layout) => void;
     "breakpoint-changed": (newBreakpoint: string, layout: Layout) => void;
-}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
-    isDraggable: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
+}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<Props>, {
+    autoSize: boolean;
+    colNum: number;
+    rowHeight: number;
+    maxRows: number;
+    margin: () => number[];
+    isDraggable: boolean;
+    isResizable: boolean;
+    isMirrored: boolean;
+    isBounded: boolean;
+    useCssTransforms: boolean;
+    verticalCompact: boolean;
+    restoreOnDrag: boolean;
+    responsive: boolean;
+    responsiveLayouts: () => {};
+    transformScale: number;
+    breakpoints: () => {
+        lg: number;
+        md: number;
+        sm: number;
+        xs: number;
+        xxs: number;
     };
-    isResizable: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
+    cols: () => {
+        lg: number;
+        md: number;
+        sm: number;
+        xs: number;
+        xxs: number;
     };
-    isBounded: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    autoSize: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    margin: {
-        type: import("vue").PropType<number[]>;
-        default: () => number[];
-    };
-    responsive: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    cols: {
-        type: import("vue").PropType<{
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        }>;
-        default: () => {
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        };
-    };
-    colNum: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    rowHeight: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    maxRows: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    transformScale: {
-        type: import("vue").PropType<number>;
-        default: number;
-    };
-    useCssTransforms: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    isMirrored: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    verticalCompact: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    restoreOnDrag: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    layout: {
-        type: import("vue").PropType<Layout>;
-        required: true;
-    };
-    responsiveLayouts: {
-        type: import("vue").PropType<{
-            [key: string]: any;
-        }>;
-        default: () => {};
-    };
-    breakpoints: {
-        type: import("vue").PropType<{
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        }>;
-        default: () => {
-            lg: number;
-            md: number;
-            sm: number;
-            xs: number;
-            xxs: number;
-        };
-    };
-    preventCollision: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-    useStyleCursor: {
-        type: import("vue").PropType<boolean>;
-        default: boolean;
-    };
-}>> & {
+    preventCollision: boolean;
+    useStyleCursor: boolean;
+}>>> & {
     "onLayout-created"?: ((layout: Layout) => any) | undefined;
     "onLayout-before-mount"?: ((layout: Layout) => any) | undefined;
     "onLayout-mounted"?: ((layout: Layout) => any) | undefined;
@@ -373,7 +223,6 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     isResizable: boolean;
     isBounded: boolean;
     autoSize: boolean;
-    margin: number[];
     responsive: boolean;
     cols: {
         lg: number;
@@ -384,6 +233,7 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     };
     colNum: number;
     rowHeight: number;
+    margin: number[];
     maxRows: number;
     transformScale: number;
     useCssTransforms: boolean;
@@ -402,11 +252,28 @@ declare const _default: __VLS_WithTemplateSlots<import("vue").DefineComponent<{
     };
     preventCollision: boolean;
     useStyleCursor: boolean;
-}, {}>, {
+}>, {
     default?(_: {}): any;
 }>;
 export default _default;
-type __VLS_WithTemplateSlots<T, S> = T & {
+declare type __VLS_NonUndefinedable<T> = T extends undefined ? never : T;
+declare type __VLS_TypePropsToRuntimeProps<T> = {
+    [K in keyof T]-?: {} extends Pick<T, K> ? {
+        type: import('vue').PropType<__VLS_NonUndefinedable<T[K]>>;
+    } : {
+        type: import('vue').PropType<T[K]>;
+        required: true;
+    };
+};
+declare type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+declare type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};
+declare type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {
         $slots: S;
     };
